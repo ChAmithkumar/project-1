@@ -18,6 +18,28 @@ window.onload = () => {
   }
 };
 
+
+// SIGNUP
+async function signup() {
+  const res = await fetch(`${API}/auth/register`, {
+    method: "POST",
+    headers: {"Content-Type":"application/json"},
+    body: JSON.stringify({
+      username: u.value,
+      email: e.value,
+      password: p.value
+    })
+  });
+
+  const data = await res.json();
+
+  if (res.ok) {
+    alert("Signup successful! Please login.");
+  } else {
+    alert(data.msg || "Signup failed");
+  }
+}
+
 // LOGIN
 async function login() {
   const res = await fetch(`${API}/auth/login`, {
