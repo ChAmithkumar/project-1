@@ -1,4 +1,4 @@
-const API = "https://blogtube-backend.onrender.com/api";
+const API = "http://localhost:5000";
 
 const authModal = document.getElementById("authModal");
 const dashboard = document.getElementById("dashboard");
