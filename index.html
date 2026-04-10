@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BlogTube</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="navbar">
+  <h1>BlogTube</h1>
+  <div>
+    <button onclick="openProfile()">Profile</button>
+    <button onclick="logout()">Logout</button>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- AUTH -->
+<div class="modal" id="authModal">
+  <div class="card">
+    <h2>Signup</h2>
+    <input id="u" placeholder="Username">
+    <input id="e" placeholder="Email">
+    <input id="p" type="password" placeholder="Password">
+    <button onclick="signup()">Signup</button>
+
+    <hr>
+
+    <h2>Login</h2>
+    <input id="le" placeholder="Email">
+    <input id="lp" type="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+  </div>
+</div>
+
+<!-- DASHBOARD -->
+<div id="dashboard">
+
+<div class="card upload">
+  <h2>Upload Video</h2>
+
+  <input id="t" placeholder="Title">
+
+  <div class="files">
+  
+
+    <div>
+      <label>Video</label>
+      <input type="file" id="videoFile" onchange="previewVideo(event)">
+      <video id="videoPreview" class="preview" controls></video>
+    </div>
+  </div>
+
+  <textarea id="d" placeholder="Description"></textarea>
+  <button onclick="upload()">Publish</button>
+</div>
+  <input 
+  type="text" 
+  id="searchInput" 
+  placeholder="Search videos..." 
+  onkeyup="searchVideos()" />  
+
+<div id="videos"></div>
+
+</div>
+</div>
+
+<!-- PROFILE -->
+<div id="profilePage" class="card">
+  <h2 id="profileName"></h2>
+  <p id="profileEmail"></p>
+
+
+  <h3>Your Videos</h3>
+  <div id="userVideos"></div>
+
+  <button onclick="closeProfile()">Back</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
