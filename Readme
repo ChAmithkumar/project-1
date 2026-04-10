@@ -1,0 +1,150 @@
+# 🎬 BlogTube
+
+A full-stack video blogging platform where users can upload, view, like, comment, and manage their own videos.
+
+---
+
+* frontedgit:"https://chamithkumar.github.io/project-1/"
+* backend: "https://project-1-2l4m.onrender.com"
+*Netlify:"https://blogging-platform-amith.netlify.app/"
+
+
+## 🚀 Features
+
+* 🔐 User Authentication (JWT)
+* 📤 Upload Videos
+* ▶️ Play Videos
+* 👍 Like System (instant update)
+* 💬 Comment System
+* 👁 View Counter
+* ✏️ Edit Videos (only by owner)
+* 🗑 Delete Videos (only by owner)
+* 🔍 Search Videos
+* 👤 User Profile with personal videos
+
+---
+
+## 🛠 Tech Stack
+
+### Frontend
+
+* HTML
+* CSS (Modern UI)
+* JavaScript (Vanilla)
+
+### Backend
+
+* Node.js
+* Express.js
+* MongoDB (Mongoose)
+* JWT Authentication
+* Multer (file upload)
+
+---
+
+## 📁 Project Structure
+
+```
+BlogTube/
+│
+├── backend/
+│   ├── models/
+│   ├── routes/
+│   ├── middleware/
+│   └── server.js
+│
+├── frontend/
+│   ├── index.html
+│   ├── style.css
+│   └── script.js
+```
+
+---
+
+## ⚙️ Setup Instructions
+
+### 1. Clone Repository
+
+```
+git clone https://github.com/your-username/blogtube.git
+cd blogtube
+```
+
+---
+
+### 2. Backend Setup
+
+```
+cd backend
+npm install
+```
+
+Create `.env` file:
+
+```
+MONGO_URI=your_mongodb_url
+JWT_SECRET=your_secret_key
+```
+
+Run server:
+
+```
+node server.js
+```
+
+---
+
+### 3. Frontend Setup
+
+Just open:
+
+```
+index.html
+```
+
+---
+
+## 🌐 Deployment
+
+### Backend (Render)
+
+* Hosted on Render
+* Uses environment variables
+
+### Frontend (Netlify)
+
+* Static hosting
+
+---
+
+## 📸 Screenshots
+
+(Add screenshots here)
+
+---
+
+## 🎯 Learning Outcome
+
+* Built a full-stack application
+* Implemented authentication
+* Created REST APIs
+* Handled file uploads
+* Managed user-specific content
+
+---
+
+## 👨‍💻 Author
+
+* Amith Kumar
+
+---
+
+## ⭐ Future Improvements
+
+* Video thumbnails auto-generation
+* Edit UI (form instead of prompt)
+* Pagination
+* Video streaming optimization
+* Dark mode
+
+---
