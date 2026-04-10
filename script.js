@@ -1,4 +1,4 @@
-const API = "https://project-1-2l4m.onrender.com";
+const API = "https://project-1-2l4m.onrender.com/api";
 
 const authModal = document.getElementById("authModal");
 const dashboard = document.getElementById("dashboard");
