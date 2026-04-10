@@ -5,7 +5,10 @@ const cors = require("cors");
 const Video = require("./models/Video");
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: "*",
+  methods: ["GET", "POST", "PUT", "DELETE"],
+}));
 app.use(express.json());
 
 mongoose.connect(process.env.MONGO_URI)
@@ -61,6 +64,12 @@ app.put("/videos/view/:id", async (req, res) => {
     res.status(500).json({ message: "Error updating views" });
   }
 });
+
+const fs = require("fs");
+
+if (!fs.existsSync("uploads")) {
+  fs.mkdirSync("uploads");
+}
 
 
 // serve uploaded files
