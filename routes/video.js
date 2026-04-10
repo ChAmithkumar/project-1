@@ -20,27 +20,29 @@ const upload = multer({ storage });
 router.post(
   "/",
   auth,
-  upload.fields([
-    
-    { name: "video", maxCount: 1 }
-  ]),
+  upload.fields([{ name: "video", maxCount: 1 }]),
   async (req, res) => {
     try {
-      if (!req.files) {
-        return res.status(400).json({ msg: "No files received" });
+      console.log("FILES:", req.files); // debug
+
+      if (!req.files || !req.files.video) {
+        return res.status(400).json({ msg: "Video file missing" });
       }
+
+      const videoFile = req.files.video[0];
 
       const video = await Video.create({
         title: req.body.title,
         description: req.body.description,
-        videoUrl: "/uploads/" + req.files.video[0].filename,
+        videoUrl: "/uploads/" + videoFile.filename,
         author: req.user.id
       });
 
       res.json(video);
+
     } catch (err) {
-      console.log("UPLOAD ERROR 👉", err);
-      res.status(500).json({ msg: "Upload failed" });
+      console.error("UPLOAD ERROR 👉", err);
+      res.status(500).json({ msg: "Upload failed", error: err.message });
     }
   }
 );
